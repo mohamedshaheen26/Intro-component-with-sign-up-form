@@ -210,6 +210,8 @@ main .right p a {
 @media (max-width: 992px) {
   main {
     height: auto;
+    background-image: url(../images/bg-intro-mobile.png);
+    background-size: contain;
   }
   main .container {
     flex-direction: column;
