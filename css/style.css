@@ -217,7 +217,7 @@ main .right p a {
     flex-direction: column;
   }
   main .left {
-    padding: 70px 40px;
+    padding: 70px 25px;
     text-align: center;
   }
   main .left h1 {
@@ -230,6 +230,6 @@ main .right p a {
   }
   main .right {
     margin-bottom: 100px;
-    width: 300px;
+    width: 330px;
   }
 }
