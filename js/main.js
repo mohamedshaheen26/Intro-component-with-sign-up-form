@@ -12,16 +12,24 @@ form.addEventListener("submit", (e) => {
   let emailValue = email.value.trim();
   let passwordValue = password.value.trim();
   let patternEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  if (firstName === "") {
-    errorMessage(fName, "First Name Cannot be empty");
+  if (firstName !== "") {
+    if (isNaN(+firstName)) {
+      success(fName);
+    } else {
+      errorMessage(fName, "First name must not contain numbers");
+    }
   } else {
-    success(fName);
+    errorMessage(fName, "Last name must not contain numbers");
   }
 
-  if (lastName === "") {
-    errorMessage(lName, "Last Name Cannot be empty");
+  if (lastName !== "") {
+    if (isNaN(+lastName)) {
+      success(lName);
+    } else {
+      errorMessage(lName, "Last Name not include number");
+    }
   } else {
-    success(lName);
+    errorMessage(lName, "Last Name Cannot be empty");
   }
 
   if (emailValue !== "") {
@@ -38,7 +46,7 @@ form.addEventListener("submit", (e) => {
     if (passwordValue.length < 8) {
       errorMessage(password, "Pasword Must be 8 Characters");
     } else {
-      success(password);
+      success(password, "");
     }
   } else {
     errorMessage(password, "Password Cannot be empty");
@@ -49,8 +57,8 @@ function errorMessage(req, message) {
   const formControl = req.parentElement;
   const span = formControl.querySelector("span");
   span.innerText = message;
-  req.className += "error";
-  span.className += "error-text";
+  req.className = "error";
+  span.className = "error-text";
 
   if (req === email) {
     req.style.color = "hsl(0, 100%, 74%)";
@@ -58,5 +66,9 @@ function errorMessage(req, message) {
 }
 
 function success(req) {
-  req.className += "success";
+  req.className = "success";
+  const formControl = req.parentElement;
+  const span = formControl.querySelector("span");
+  span.innerText = "";
+  req.style.color = "black";
 }
