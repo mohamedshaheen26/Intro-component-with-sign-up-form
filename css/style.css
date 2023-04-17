@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/********************** Start Grid System **********************/
+.container {
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/********************** Small **********************/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/********************** Medium **********************/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/********************** Large **********************/
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/********************** End Grid System **********************/
+
+main {
+  height: 100vh;
+
+  background-image: url(../images/bg-intro-desktop.png);
+  background-size: cover;
+
+  background-color: hsl(0, 100%, 74%);
+}
+
+main .container {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+main .left h1 {
+  color: #fff;
+
+  width: 650px;
+
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1;
+
+  margin-bottom: 30px;
+}
+
+main .left p {
+  color: #fff;
+
+  width: 500px;
+}
+
+main .right {
+  width: 480px;
+}
+
+main .right .head {
+  padding: 15px 30px;
+
+  text-align: center;
+
+  color: #fff;
+  background-color: hsl(248, 32%, 49%);
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+main .right .head span {
+  color: hsl(246, 25%, 77%);
+
+  font-weight: normal;
+}
+
+main .right form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 35px;
+
+  background-color: #fff;
+
+  border-radius: 8px;
+
+  box-shadow: 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+main .right form div {
+  display: flex;
+  flex-direction: column;
+}
+
+main .right form input {
+  width: 100%;
+
+  padding: 17px 25px;
+
+  border-radius: 8px;
+  border: 1px solid #efefef;
+
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.error {
+  border: 2px solid hsl(0, 100%, 74%) !important;
+
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.error-text {
+  color: hsl(0, 100%, 74%);
+
+  margin: -15px 0 20px auto;
+
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.success {
+  border: 2px solid hsl(154, 59%, 51%) !important;
+}
+
+main .right form img {
+  width: 20px;
+
+  display: block;
+
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+main .right form input:focus {
+  outline: none;
+}
+
+main .right form input::placeholder {
+  transition: 0.4s;
+}
+
+main .right form input:focus::placeholder {
+  opacity: 0;
+}
+
+main .right form input[type="submit"] {
+  background-color: hsl(154, 59%, 51%);
+  color: #fff;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 14px;
+  border-bottom: 3px solid hsl(154, 56%, 47%);
+
+  cursor: pointer;
+}
+
+main .right form input[type="submit"]:hover {
+  background-color: hsl(154, 63%, 59%);
+}
+
+main .right form p {
+  color: hsl(246, 25%, 77%);
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+main .right p a {
+  text-decoration: none;
+
+  color: hsl(0, 100%, 74%);
+
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  main .container {
+    flex-direction: column;
+  }
+  main .left {
+    padding: 70px 40px;
+    text-align: center;
+  }
+  main .left h1 {
+    font-size: 25px;
+    width: auto;
+  }
+  main .left p {
+    font-size: 15px;
+    width: auto;
+  }
+  main .right {
+    margin-bottom: 100px;
+    width: 300px;
+  }
+}
