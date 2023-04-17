@@ -208,6 +208,9 @@ main .right p a {
 }
 
 @media (max-width: 992px) {
+  main {
+    height: auto;
+  }
   main .container {
     flex-direction: column;
   }
